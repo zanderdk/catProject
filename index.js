@@ -37,7 +37,7 @@ var alex;
 var aleks;
 
 function func() {
-    $.get( "http://192.168.1.31/state", function( data ) {
+    $.get( "http://" + myip + "/state", function( data ) {
         alex = $("#alex");
         aleks = $("#aleks");
         if (data.alex) {
@@ -48,9 +48,9 @@ function func() {
         }
         alex.change(function() {
             if(alex[0].checked) {
-                $.post("http://192.168.1.31/enable", {name: 0, flag: 1});
+                $.post("http://" + myip + "/enable", {name: 0, flag: 1});
             } else { 
-                $.post("http://192.168.1.31/enable", {name: 0, flag: 0});
+                $.post("http://" + myip + "/enable", {name: 0, flag: 0});
             }
         });
 
@@ -59,9 +59,9 @@ function func() {
         }
         aleks.change(function() {
             if(aleks[0].checked) {
-                $.post("http://192.168.1.31/enable", {name: 1, flag: 1});
+                $.post("http://" + myip + "/enable", {name: 1, flag: 1});
             } else { 
-                $.post("http://192.168.1.31/enable", {name: 1, flag: 0});
+                $.post("http://" + myip + "/enable", {name: 1, flag: 0});
             }
         });
 
