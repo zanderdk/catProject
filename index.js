@@ -22,8 +22,9 @@ $(function () {
     $.getScript("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js", function(){
         $.getScript("http://vsn4ik.github.io/bootstrap-checkbox/dist/js/bootstrap-checkbox.min.js", function(){
             var content = $("#content");
-            $.get("https://cdn.rawgit.com/zanderdk/catProject/master/template.html", function(data){
+            $.get("https://raw.githubusercontent.com/zanderdk/catProject/master/template.html", function(data){
                 content.append(data);
+                $(':checkbox').checkboxpicker();
             });
         });
     });
